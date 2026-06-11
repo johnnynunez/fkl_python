@@ -57,7 +57,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        cuda: ["12.6.3", "13.0.2"]
+        cuda: ["12.6.3", "13.1.1"]
     steps:
       - uses: actions/checkout@v4
 
@@ -66,7 +66,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install CUDA toolkit (nvcc, headers)
-        uses: Jimver/cuda-toolkit@v0.2.27
+        uses: Jimver/cuda-toolkit@v0.2.35
         with:
           cuda: ${{ matrix.cuda }}
           method: network
